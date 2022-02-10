@@ -93,7 +93,7 @@ function moveLine(
 
     if (trail_overflow) {
       pos = overflowLeds(pos);
-      gradientPos = overflowLeds(gradientPos);
+      // gradientPos = overflowLeds(gradientPos);
     }
 
     if (pos >= 0) {
@@ -107,11 +107,11 @@ function moveLine(
       })`;
 
       // render gradient
-      if (isGradient) {
-        newLeds[gradientPos] = `rgba(255, 0, 0, ${
-          1 - (1 / (trailLength + addForAlpha)) * i
-        })`;
-      }
+      // if (isGradient) {
+      //   newLeds[gradientPos] = `rgba(255, 0, 0, ${
+      //     1 - (1 / (trailLength + addForAlpha)) * i
+      //   })`;
+      // }
     }
   }
 
@@ -124,6 +124,7 @@ function moveLine(
     if (pos > LEDS_LENGTH - 1) {
       return pos - LEDS_LENGTH;
     }
+    return pos;
   }
 }
 
